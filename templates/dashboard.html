@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Olá, <strong>{{ current_user.username }}</strong>!</p>
+<p>Seu plano atual: <strong>{{ plan }}</strong></p>
+
+<h3>Alterar Plano</h3>
+<div class="plan-buttons">
+    <a href="{{ url_for('subscribe', plan='free') }}" class="btn-plan free">Free</a>
+    <a href="{{ url_for('subscribe', plan='basic') }}" class="btn-plan basic">Basic</a>
+    <a href="{{ url_for('subscribe', plan='premium') }}" class="btn-plan premium">Premium</a>
+</div>
+
+<p><a href="{{ url_for('logout') }}">Sair</a></p>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Bem-vindo ao Meu SaaS!</h2>
+<p>Uma plataforma simples para gerenciar assinaturas com Python.</p>
+
+{% if current_user.is_authenticated %}
+    <p><a href="{{ url_for('dashboard') }}" class="btn">Ir para o Dashboard</a></p>
+{% else %}
+    <p><a href="{{ url_for('login') }}" class="btn">Fazer Login</a></p>
+{% endif %}
+
+<h3>Planos Disponíveis</h3>
+<ul class="plans">
+    <li><strong>Free:</strong> Acesso básico</li>
+    <li><strong>Basic:</strong> Recursos intermediários</li>
+    <li><strong>Premium:</strong> Todos os recursos</li>
+</ul>
+{% endblock %}
